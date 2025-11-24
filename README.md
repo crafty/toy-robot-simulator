@@ -1,27 +1,52 @@
-# Running the app
+# 🚀 Toy Robot Simulator – Deployment & Running Instructions
 
-- Running it locally requires you to have SQLlite installed, nodeJS, NVM, and other dependency.
-- To save you time and complexity time I opted for containerizing the client, server, and adding a persistnt volume for SQLite.
-- I've deployed it to TODO: URL HERE
-- If you want to run it locally and have the aforementioned depdenecies installed you could clone the project and run npm run dev from the client dir and npm run:start:dev from the server
-- This README should be way more fleshed out but opted to stop due to time contraints.
+This project includes both a **React (Vite + TypeScript) client** and a **NestJS (TypeScript) server** with a **SQLite** persistence layer. Everything is containerized to make the setup simple and consistent across environments.
 
-# client
+---
 
-- Vite generated React + Typescript Project
-- No access to Figma so I color picked the colors and used an icon lib for the robot and chevron
-- Didn't add unit test but I might return in the morning and make another commit with unit test so you can at least see a few
+## 📦 Running the Application
 
-# server
+### Option 1: Use the Hosted Deployment (Recommended)
 
-- NestJS using their Typescript starter project to save time
-- Went with TypeORM as Nest mentions in their documentation that they have out of the box integration with it using @nestjs/typeorm.
-- Swagger docs are available at /api
-- No time to setup proper migrations when deployed in production
-- No time to add unit test for my controller and service
-- Realized I need to handle the request better to prevent race conditions on reload, no time to
+To save setup time, the project is already deployed using Docker on Render:
 
-# data
+- **Client Application:** https://toy-robot-simulator-1.onrender.com
+- **API Swagger Documentation:** https://toy-robot-simulator.onrender.com/api
 
-- SQLite per the projects requirements
-- Actual SQLite file at runtime (dev + Docker)
+These links give you full access to the UI and API without installing anything locally.
+
+---
+
+### Option 2: Run Locally (for development)
+
+To run the project locally, ensure you have the following installed:
+
+- **Node.js / NVM**
+- **SQLite**
+- **Dependencies for both client + server** (via `npm install`)
+
+Then:
+
+```bash
+# Client
+cd client
+npm install
+npm run dev
+
+# Server
+cd server
+npm install
+npm run start:dev
+```
+
+---
+
+## 🚧 Under Construction! Might add more commits Monday morning for missing AC.
+
+The following were my shortcomings mostly due to time contraints.
+
+- **No access to Figma so I color picked the colors and used an icon lib for the robot and chevron.**
+- **No client or server side unit test yet.**
+- **No time to setup more robust endpoints with better error handling.**
+- **I was seeing an issue where the last saved position would be a move or two behind. This may have been due running React in strict mode during development or race conditions when saving to the server.**
+- **I'd still like to clean up the front end code more but it's in a decently organized state for now**
