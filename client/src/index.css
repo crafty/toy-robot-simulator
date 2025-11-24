@@ -1,0 +1,49 @@
+:root {
+  --bg-color-dark-mode: #1d2426;
+  --bg-color-light-mode: #cbd4d6;
+  --bg-secondary-color: #2f3638;
+  --square-bg-color: #293538;
+  --square-border-color: #696a6a;
+  --primary-color: #32b6be;
+  --font-color-dark: #293539;
+  --font-color-light: #d0d2d3;
+
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  color: var(--font-color-light);
+  background-color: var(--bg-color-dark-mode);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 820px;
+  min-height: 100vh;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    background-color: var(--bg-color-dark-mode);
+    color: var(--font-color-light);
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    background-color: var(--bg-color-light-mode);
+    color: var(--font-color-dark);
+  }
+}

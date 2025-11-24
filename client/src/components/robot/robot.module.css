@@ -1,0 +1,25 @@
+.base {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.NORTH {
+  flex-direction: column;
+}
+
+.SOUTH {
+  flex-direction: column-reverse;
+}
+
+.EAST {
+  flex-direction: row-reverse;
+}
+
+.WEST {
+  flex-direction: row;
+}
+
+.robot {
+  color: var(--primary-color);
+}

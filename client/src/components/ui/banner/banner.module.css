@@ -1,0 +1,10 @@
+.banner {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 20px;
+  background-color: var(--bg-secondary-color);
+  font-weight: 600;
+  border-radius: 10px;
+}
