@@ -8,9 +8,10 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
   app.enableCors({
-    origin: true,
+    origin: true, // Should be updated for production use
   });
 
+  // Swagger setup
   const config = new DocumentBuilder()
     .setTitle('Toy Robot Simulator example')
     .setDescription(

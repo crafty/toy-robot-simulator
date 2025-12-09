@@ -17,16 +17,18 @@ export class MovementService {
   async trackMovement(dto: TrackMovementDto): Promise<Movement> {
     const { sessionId, position } = dto;
 
-    // Ensure session exists (simple upsert-style behavior)
+    // Ensure session exists
     let session = await this.sessionRepo.findOne({
       where: { id: sessionId },
     });
 
+    // If session does not exist, create it
     if (!session) {
       session = this.sessionRepo.create({ id: sessionId });
       await this.sessionRepo.save(session);
     }
 
+    // Create and save movement for the session
     const movement = this.movementRepo.create({
       sessionId,
       x: position.x,
@@ -34,10 +36,12 @@ export class MovementService {
       heading: position.heading,
     });
 
+    // return saved movement
     return this.movementRepo.save(movement);
   }
 
   async getLastMovementForSession(sessionId: string): Promise<Movement> {
+    // Retrieve the most recent movement for the given session ID
     return this.movementRepo.findOne({
       where: { sessionId },
       order: { createdAt: 'DESC' },

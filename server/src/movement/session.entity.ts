@@ -4,7 +4,7 @@ import { Movement } from './movement.entity';
 @Entity()
 export class Session {
   @PrimaryColumn()
-  id: string; // sessionId coming from the client, could be auto-generated server side when the user first places the robot
+  id: string; // sessionId coming from the client, should be auto-generated server side when the user first places the robot
 
   @OneToMany(() => Movement, (movement) => movement.session)
   movements: Movement[];
