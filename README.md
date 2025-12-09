@@ -37,6 +37,7 @@ npm run dev
 cd server
 npm install
 npm run start:dev
+npm run test
 ```
 
 ---
