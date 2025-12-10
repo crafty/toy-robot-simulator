@@ -1,6 +1,6 @@
 # 🚀 Toy Robot Simulator – Deployment & Running Instructions
 
-This project includes both a **React (Vite + TypeScript) client** and a **NestJS (TypeScript) server** with a **SQLite** persistence layer. Everything is containerized to make the setup simple and consistent across environments.
+This project includes both a **React (Vite + TypeScript) client** and a **NestJS (TypeScript) server** with a **SQLite** persistence layer. The backend service is containerized for easy deployment and a simple and consistent across environments.
 
 ---
 
