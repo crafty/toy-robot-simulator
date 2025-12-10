@@ -32,6 +32,7 @@ Then:
 cd client
 npm install
 npm run dev
+npm run test
 
 # Server
 cd server
@@ -42,12 +43,13 @@ npm run test
 
 ---
 
-## 🚧 Under Construction! Might add more commits Monday morning for missing AC.
+## 🚧 Under Construction! Might add more commits for missing AC.
 
 The following were my shortcomings mostly due to time contraints.
 
 - **No access to Figma so I color picked the colors and used an icon lib for the robot and chevron.**
-- **No client or server side unit test yet.**
+- **No client unit test yet.**
 - **No time to setup more robust endpoints with better error handling.**
+- **No time to cache the sessionId to the browser so the user could come back to where they were even after a reboot.**
 - **I was seeing an issue where the last saved position would be a move or two behind. This may have been due running React in strict mode during development or race conditions when saving to the server.**
 - **I'd still like to clean up the front end code more but it's in a decently organized state for now**
